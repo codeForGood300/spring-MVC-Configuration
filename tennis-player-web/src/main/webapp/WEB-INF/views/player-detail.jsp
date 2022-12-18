@@ -1,17 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Main Menu</title>
+<title>Player Details</title>
 </head>
 <body>
-	<h2> Spring MVC - Tennis Player Database</h2>
+<h2>Player info</h2>
+<hr>
 
-	<hr><br>
-	<a href="showPlayerForm"> Search Player</a>
-
+<br><br>
+Player name :  ${param.playerName}
 
 </body>
 </html>

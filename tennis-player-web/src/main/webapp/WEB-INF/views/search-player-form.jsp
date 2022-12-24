@@ -9,7 +9,7 @@
 
 <body>
 <h2>Player Form</h2>
-<br>+
+<br>
 	<form action = "processPlayerForm" method ="GET">
 	Enter player name: <input type = "text" name = "playerName" />
 	    <input type = "submit" />

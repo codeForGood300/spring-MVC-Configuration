@@ -13,5 +13,14 @@
 <br><br>
 Player name :  ${name}
 
+<br><br>
+DoB: ${dob}
+
+<br><br>
+Country: ${country}
+
+<br><br>
+Titles: ${titles}
+
 </body>
 </html>

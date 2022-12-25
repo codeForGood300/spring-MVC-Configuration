@@ -10,7 +10,7 @@
 <body>
 <h2>Player Form</h2>
 <br>
-	<form action = "processPlayerForm" method ="GET">
+	<form action = "processPlayerForm" method ="POST">
 	Enter player name: <input type = "text" name = "playerName" />
 	    <input type = "submit" />
 	</form>

@@ -12,6 +12,9 @@
 	<hr><br>
 	<a href="showPlayerForm"> Search Player</a>
 
+	<br><br>
+    	<a href="player/showPlayerForm"> Add Player Details</a>
+
 
 </body>
 </html>

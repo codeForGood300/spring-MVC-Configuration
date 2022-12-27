@@ -1,8 +1,6 @@
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,15 +13,19 @@
 	font-style: italic;
 }
 </style>
-</head>
 
+</head>
 <body>
 	<h2>Player Form</h2>
 	<hr>
 	<form:form action = "processPlayerForm" modelAttribute="athlete">
+
+	 	<br><br>
+		First Name: <form:input path = "firstName"/>
+
 		<br><br>
-		Name: <form:input path = "lastName"/>
-	    <form:errors path= "lastName" cssClass= "error" />
+		Last Name *: <form:input path = "lastName"/>
+	    <form:errors path= "lastName" cssClass="error"/>
 
 		<br><br>
 	    Country: <form:select path="country">
@@ -41,11 +43,15 @@
 			Ambidextrous <form:radiobutton path="handedness" value="Ambidextrous"/>
 
 		<br><br>
-		Grand Slam Titles Won: &emsp;
-			Australian Open <form:checkbox path="titles" value="Australian Open"/> &emsp;
-			French Open <form:checkbox path="titles" value="French Open"/> &emsp;
-			Wimbledon <form:checkbox path="titles" value="Wimbledon"/> &emsp;
-			US Open <form:checkbox path="titles" value="US Open"/>
+		Grand Slams Won: &emsp;
+			Australian Open <form:checkbox path="grandSlams" value="Australian Open"/> &emsp;
+			French Open <form:checkbox path="grandSlams" value="French Open"/> &emsp;
+			Wimbledon <form:checkbox path="grandSlams" value="Wimbledon"/> &emsp;
+			US Open <form:checkbox path="grandSlams" value="US Open"/>
+
+		<br><br>
+		Current Rank *: <form:input path = "rank"/>
+	    <form:errors path= "rank" cssClass="error"/>
 
 	    <br><br>
 		<input type ="submit" value = "Add Player"/>
@@ -54,4 +60,3 @@
 
 </body>
 </html>
-

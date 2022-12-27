@@ -1,21 +1,39 @@
 package io.datajek.springmvc;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import java.util.LinkedHashMap;
+
+import org.hibernate.validator.constraints.NotEmpty;
 
 public class Athlete {
+    private String firstName;
+
     //	@NotEmpty(message = "This is a required field.")
     @NotNull(message = "This is a required field.")
     @Size(min=1, message = "This is a required field.")
     private String lastName;
+
     private String country;
     private String handedness;
-    private String[] titles;
+    private String[] grandSlams;
 
+    @NotNull(message = "This is a required field.")
+    @Min(value=1, message="Value must be greater than or equal to 1.")
+    @Max(value=100, message="Value must be less than or equal to 100.")
+    private Integer rank;
 
     public Athlete() {
 
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public String getLastName() {
@@ -42,14 +60,21 @@ public class Athlete {
         this.handedness = handedness;
     }
 
-    public String[] getTitles() {
-        return titles;
+    public String[] getGrandSlams() {
+        return grandSlams;
     }
 
-    public void setTitles(String[] titles) {
-        this.titles = titles;
+    public void setGrandSlams(String[] grandSlams) {
+        this.grandSlams = grandSlams;
     }
 
+    public Integer getRank() {
+        return rank;
+    }
+
+    public void setRank(Integer rank) {
+        this.rank = rank;
+    }
 }
 
 

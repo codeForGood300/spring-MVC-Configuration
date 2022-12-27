@@ -1,8 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,7 +15,7 @@
 	The player has been added.
 
 	<br><br>
-	<b>Name</b> : ${athlete.lastName}
+	<b>Name</b> : ${athlete.firstName} ${athlete.lastName}
 
 	<br><br>
     <b>Country</b> : ${athlete.country}
@@ -28,10 +26,13 @@
     <br><br>
     <b>Grand Slam Titles</b> :
     <ul>
-		<c:forEach items="${athlete.titles}" var="title">
+		<c:forEach items="${athlete.grandSlams}" var="title">
 			<li>${title}</li>
 		</c:forEach>
 	</ul>
+
+	<br><br>
+	<b>Current Rank</b> : ${athlete.rank}
 
 </body>
 </html>

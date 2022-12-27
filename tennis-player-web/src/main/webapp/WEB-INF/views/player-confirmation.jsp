@@ -38,5 +38,8 @@
 	<br><br>
 	<b>Last Won</b> : <fmt:formatDate type="date" value="${athlete.lastWon}"  pattern="dd-MM-YYYY"/>
 
+    <br><br>
+    <b>Prize Money</b> : ${athlete.prizeMoney}
+
 </body>
 </html>

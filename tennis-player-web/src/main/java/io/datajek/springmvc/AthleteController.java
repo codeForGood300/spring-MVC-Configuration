@@ -15,12 +15,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/player")
 public class AthleteController {
 
-
     @InitBinder
     public void initBinder(WebDataBinder binder) {
         StringTrimmerEditor editor = new StringTrimmerEditor(true);
         binder.registerCustomEditor(String.class, editor);
     }
+
     //method to handle /showPlayerForm
     @RequestMapping("/showPlayerForm")
     public String showForm(Model model) {
@@ -31,7 +31,8 @@ public class AthleteController {
     //method to handle /processPlayerForm
     @RequestMapping("/processPlayerForm")
     public static String processForm(@Valid @ModelAttribute("athlete") Athlete myAthlete,
-                                     BindingResult result) {
+                                     BindingResult result){
+
         if (result.hasErrors())
             return "add-player-form";
         else

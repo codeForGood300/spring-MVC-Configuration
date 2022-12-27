@@ -1,12 +1,17 @@
 package io.datajek.springmvc;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.LinkedHashMap;
 
 public class Athlete {
+    //	@NotEmpty(message = "This is a required field.")
+    @NotNull(message = "This is a required field.")
+    @Size(min=1, message = "This is a required field.")
     private String lastName;
     private String country;
     private String handedness;
-    private String[] grandSlams;
+    private String[] titles;
 
 
     public Athlete() {
@@ -37,12 +42,12 @@ public class Athlete {
         this.handedness = handedness;
     }
 
-    public String[] getGrandSlams() {
-        return grandSlams;
+    public String[] getTitles() {
+        return titles;
     }
 
-    public void setGrandSlams(String[] grandSlams) {
-        this.grandSlams = grandSlams;
+    public void setTitles(String[] titles) {
+        this.titles = titles;
     }
 
 }

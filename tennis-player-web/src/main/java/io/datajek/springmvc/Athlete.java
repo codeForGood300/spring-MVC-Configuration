@@ -1,11 +1,16 @@
 package io.datajek.springmvc;
 
+import java.util.Date;
+
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.format.annotation.DateTimeFormat;
+
 
 public class Athlete {
     private String firstName;
@@ -23,6 +28,10 @@ public class Athlete {
     @Min(value=1, message="Value must be greater than or equal to 1.")
     @Max(value=100, message="Value must be less than or equal to 100.")
     private Integer rank;
+
+    @DateTimeFormat(pattern = "dd-MM-yyyy")
+    @Past(message = "Date must be in the past.")
+    private Date lastWon;
 
     public Athlete() {
 
@@ -74,6 +83,14 @@ public class Athlete {
 
     public void setRank(Integer rank) {
         this.rank = rank;
+    }
+
+    public Date getLastWon() {
+        return lastWon;
+    }
+
+    public void setLastWon(Date lastWon) {
+        this.lastWon = lastWon;
     }
 }
 
